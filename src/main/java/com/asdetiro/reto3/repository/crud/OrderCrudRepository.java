@@ -18,7 +18,7 @@ import org.springframework.data.mongodb.repository.Query;
 public interface OrderCrudRepository extends MongoRepository<Order, Integer>{
     
     //Retorna las ordenes de pedido que coincidan con la zona recibida como parametro
-    @Query("{'salesMan'.zone' : ?0}")
+    @Query("{'salesMan.zone' : ?0}")
     List<Order> findByZone(final String zone);
     
     //Retorna las ordenes por estado
